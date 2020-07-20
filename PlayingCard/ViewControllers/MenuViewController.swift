@@ -27,4 +27,13 @@ class MenuViewController: UIViewController {
             self.navigationController?.pushViewController(gameViewController, animated: true)
         }
     }
+    
+    @IBAction func checkRules(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rulesViewController = storyboard.instantiateViewController(withIdentifier: "RulesViewController") as! RulesViewController
+        rulesViewController.modalPresentationStyle = .fullScreen
+        ViewAnimations.zoomInOut(on: sender) { _ in
+            self.navigationController?.pushViewController(rulesViewController, animated: true)
+        }
+    }
 }

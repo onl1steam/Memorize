@@ -11,13 +11,13 @@
         <!--MenuVC-->
         <scene sceneID="SeO-IF-wJ2">
             <objects>
-                <viewController title="MenuVC" id="7fL-pA-dr3" customClass="MenuViewController" customModule="PlayingCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" title="MenuVC" id="7fL-pA-dr3" customClass="MenuViewController" customModule="PlayingCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IUf-se-0jo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoI-6B-Ei5">
-                                <rect key="frame" x="66" y="330.66666666666669" width="282" height="75"/>
+                                <rect key="frame" x="66" y="300.66666666666669" width="282" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
                                 <state key="normal" title="Новая игра">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -26,18 +26,30 @@
                                     <action selector="startGame:" destination="7fL-pA-dr3" eventType="touchUpInside" id="nu9-41-ddB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memorize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eg-2Y-MRT">
-                                <rect key="frame" x="63" y="50" width="288" height="77"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Найди пару" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eg-2Y-MRT">
+                                <rect key="frame" x="40.666666666666657" y="80" width="332.66666666666674" height="77"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wj-tP-UWb">
+                                <rect key="frame" x="97.666666666666686" y="425.66666666666669" width="219" height="75"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
+                                <state key="normal" title="Правила">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkRules:" destination="7fL-pA-dr3" eventType="touchUpInside" id="YLs-Jr-qb6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="WoI-6B-Ei5" firstAttribute="centerY" secondItem="IUf-se-0jo" secondAttribute="centerY" id="IfF-NP-bK2"/>
+                            <constraint firstItem="WoI-6B-Ei5" firstAttribute="centerY" secondItem="IUf-se-0jo" secondAttribute="centerY" constant="-30" id="IfF-NP-bK2"/>
+                            <constraint firstItem="6wj-tP-UWb" firstAttribute="top" secondItem="WoI-6B-Ei5" secondAttribute="bottom" constant="50" id="ZwZ-Jd-hfe"/>
                             <constraint firstItem="2eg-2Y-MRT" firstAttribute="centerX" secondItem="IUf-se-0jo" secondAttribute="centerX" id="dq5-Dv-3fN"/>
-                            <constraint firstItem="2eg-2Y-MRT" firstAttribute="top" secondItem="VMh-T3-KJb" secondAttribute="top" constant="50" id="hjH-98-Mbo"/>
+                            <constraint firstItem="2eg-2Y-MRT" firstAttribute="top" secondItem="VMh-T3-KJb" secondAttribute="top" constant="80" id="hjH-98-Mbo"/>
+                            <constraint firstItem="6wj-tP-UWb" firstAttribute="centerX" secondItem="IUf-se-0jo" secondAttribute="centerX" id="kzt-sf-oMg"/>
                             <constraint firstItem="WoI-6B-Ei5" firstAttribute="centerX" secondItem="IUf-se-0jo" secondAttribute="centerX" id="xtt-t7-38r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VMh-T3-KJb"/>
@@ -48,6 +60,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ni-Tk-pUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3731.884057971015" y="-100.2717391304348"/>
+        </scene>
+        <!--Rules View Controller-->
+        <scene sceneID="ctp-0X-7b7">
+            <objects>
+                <viewController storyboardIdentifier="RulesViewController" id="mXT-sa-VTq" customClass="RulesViewController" customModule="PlayingCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bZQ-Bn-wF3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правила игры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLb-MH-BYt">
+                                <rect key="frame" x="33.666666666666657" y="80" width="347" height="66"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwM-yo-E2G">
+                                <rect key="frame" x="20" y="196" width="374" height="437"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Игроку дается набор карт из колоды размером 52. Они расположены рубашками вверх и движутся произвольно по экрану. Игрок должен последовательно вскрывать по две карточки с одинаковым номером и мастью. Например “восьмерка бубен” и “восьмерка пик”  не образуют пару. За каждую угаданную пару дается по 10 очков плюс бонус за скорость. Если пара не угадана отнимается 5 очков. Целью игры является набрать как можно больше очков.
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhb-xC-COn">
+                                <rect key="frame" x="63.666666666666657" y="643" width="287" height="63"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <state key="normal" title="Выйти в меню">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToMenu:" destination="mXT-sa-VTq" eventType="touchUpInside" id="sQ0-1G-wbk"/>
+                                    <action selector="startGame:" destination="7fL-pA-dr3" eventType="touchUpInside" id="BrT-rH-x7y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fhb-xC-COn" firstAttribute="top" secondItem="GwM-yo-E2G" secondAttribute="bottom" constant="10" id="3hQ-P9-25I"/>
+                            <constraint firstItem="h8B-Ww-1YA" firstAttribute="trailing" secondItem="GwM-yo-E2G" secondAttribute="trailing" constant="20" id="7NB-4H-ePY"/>
+                            <constraint firstItem="Fhb-xC-COn" firstAttribute="centerX" secondItem="bZQ-Bn-wF3" secondAttribute="centerX" id="7NK-s4-w96"/>
+                            <constraint firstItem="zLb-MH-BYt" firstAttribute="top" secondItem="h8B-Ww-1YA" secondAttribute="top" constant="80" id="9jv-AZ-A5q"/>
+                            <constraint firstItem="h8B-Ww-1YA" firstAttribute="bottom" secondItem="Fhb-xC-COn" secondAttribute="bottom" constant="30" id="QAx-xb-3l5"/>
+                            <constraint firstItem="GwM-yo-E2G" firstAttribute="leading" secondItem="h8B-Ww-1YA" secondAttribute="leading" constant="20" id="ctK-a0-eW0"/>
+                            <constraint firstItem="zLb-MH-BYt" firstAttribute="centerX" secondItem="bZQ-Bn-wF3" secondAttribute="centerX" id="g8X-Db-vzU"/>
+                            <constraint firstItem="GwM-yo-E2G" firstAttribute="top" secondItem="zLb-MH-BYt" secondAttribute="bottom" constant="50" id="lXe-0n-McC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h8B-Ww-1YA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JL-Ck-v4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3713.04347826087" y="571.46739130434787"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">

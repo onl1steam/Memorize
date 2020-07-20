@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    private var additionalPoints = 20 {
+    private var additionalPoints = 50 {
         didSet {
             if additionalPoints < 0 {
                 additionalPoints = 0
@@ -41,8 +41,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
-            self.additionalPoints -= 5
+        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.additionalPoints -= 1
         }
         
         edgesForExtendedLayout = []
